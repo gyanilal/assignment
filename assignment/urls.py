@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('api/register', SignUpView.as_view()),
     # path('api/login', LoginApi.as_view()),
-    path('api/tweets', TwitterView.as_view())
+    path('api/tweets', TwitterView.as_view()),
+    path('tweets/', IndexView.as_view()),
 ]

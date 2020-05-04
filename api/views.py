@@ -16,6 +16,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.http import HttpResponse
 import tweepy
+from django.views.generic import TemplateView
 # class SignUpView(APIView):
 # 	authentication_classes = [SessionAuthentication, BasicAuthentication]
 # 	def post(self,request):
@@ -97,4 +98,7 @@ class TwitterView(APIView):
 		serializer = TweetSerializer(queryset, many=True)
 		return Response({'data': serializer.data },status=HTTP_200_OK)
 
+
+class IndexView(TemplateView):
+	template_name = "build/index.html"
 
